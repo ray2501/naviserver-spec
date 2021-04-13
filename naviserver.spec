@@ -4,7 +4,7 @@
 
 Summary:        NaviServer: HTTP server
 Name:           naviserver
-Version:        4.99.20
+Version:        4.99.21
 Release:        1
 License:        MPL-1.1
 Group:          Productivity/Networking/Web/Servers
