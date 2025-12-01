@@ -43,6 +43,9 @@ This package contains development files for NaviServer.
 %build
 ./configure \
         --prefix=/var/lib/naviserver \
+%ifarch x86_64
+        --enable-64bit=yes \
+%endif
         --with-tcl=/usr/%{_lib} \
         --with-zlib=/usr/%{_lib} \
         --with-openssl=/usr/%{_lib}
