@@ -1,0 +1,23 @@
+[Unit]
+Description=NaviServer
+After=network.target
+#After=network.target postgresql.service
+#Wants=postgresql.service
+ 
+[Service]
+Type=forking
+PIDFile=/var/lib/naviserver/logs/nsd.pid
+Environment="LANG=en_US.UTF-8"
+# In case, a site is using Google Perfortools malloc with the system-malloc patch for Tcl:
+# Environment="LD_PRELOAD=/usr/lib/libtcmalloc.so"
+ExecStartPre=-/bin/rm -f /var/lib/naviserver/logs/nsd.pid
+ 
+# Standard startup with a privileged port
+ExecStart=/var/lib/naviserver/bin/nsd -u nsadmin -g nsadmin -t /var/lib/naviserver/conf/nsd-config.tcl \
+-b 127.0.0.1:80,[::1]:80#2,127.0.0.1:443,[::1]:443#2
+ 
+Restart=on-abnormal
+KillMode=process
+ 
+[Install]
+WantedBy=multi-user.target

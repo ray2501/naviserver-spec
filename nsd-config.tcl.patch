@@ -1,0 +1,24 @@
+--- nsd-config.tcl.org	2025-12-01 18:55:14.899747317 +0800
++++ nsd-config.tcl	2025-12-01 18:56:16.811938225 +0800
+@@ -33,16 +33,16 @@
+ #       the root directory, containng the subdirecturies
+ #       "pages", "logs", "lib", "bin", "tcl", ....
+ #
+-dict set defaultConfig ipaddress   0.0.0.0
+-dict set defaultConfig httpport    8080
+-dict set defaultConfig httpsport   ""
++dict set defaultConfig ipaddress   "127.0.0.1 ::1"
++dict set defaultConfig httpport    80
++dict set defaultConfig httpsport   443
+ dict set defaultConfig nscpport    ""
+ dict set defaultConfig home        [file dirname [file dirname [info nameofexecutable]]]
+ dict set defaultConfig hostname    localhost
+ dict set defaultConfig pagedir     {$home/pages}
+ dict set defaultConfig logdir      {$home/logs}
+-dict set defaultConfig certificate {$home/etc/server.pem}
+-dict set defaultConfig vhostcertificates {$home/etc/certificates}
++dict set defaultConfig certificate {$home/certificates/server.pem}
++dict set defaultConfig vhostcertificates {$home/certificates/certificates}
+ dict set defaultConfig serverprettyname "My NaviServer Instance"
+ dict set defaultConfig reverseproxymode false
+ dict set defaultConfig trustedservers ""
