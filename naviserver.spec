@@ -6,7 +6,7 @@ Name:          naviserver
 Summary:       NaviServer
 Version:       5.0.3
 Release:       1
-License:       MPLv2.0
+License:       MPL-2.0
 Group:         Productivity/Networking/Web/Servers
 Source:        %{name}-%{version}.tar.gz
 Source1:       nsd.service
