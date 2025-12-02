@@ -67,15 +67,21 @@ install -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/nsd.service
 rm -rf %buildroot
 
 %pre
+%service_add_pre nsd.service
 if getent passwd nsadmin >/dev/null; then
     echo "User nsadmin already created!"
 else
     useradd -r -c 'NaviServer' -d/var/lib/naviserver -U -M -s/bin/bash nsadmin
 fi
 
-
 %post
 %systemd_post nsd.service
+
+%preun
+%service_del_preun nsd.service
+
+%postun
+%service_del_postun nsd.service
 
 %files
 %doc license.terms README.md NEWS
