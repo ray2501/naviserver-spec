@@ -36,6 +36,13 @@ Group:          Productivity/Networking/Web/Servers
 %description devel
 This package contains development files for NaviServer.
 
+%package doc
+Summary:        NaviServer documentation
+Group:          Productivity/Networking/Web/Servers
+
+%description doc
+The naviserver-doc package contains the documentation files.
+
 %prep
 %setup -q -n %{name}-%{version}
 %patch 0
@@ -82,7 +89,9 @@ fi
 /var/lib/naviserver/lib
 /var/lib/naviserver/logs
 /var/lib/naviserver/modules
-/var/lib/naviserver/pages
+%dir /var/lib/naviserver/pages
+/var/lib/naviserver/pages/index.adp
+/var/lib/naviserver/pages/install-from-repository.tcl
 /var/lib/naviserver/tcl
 /var/lib/naviserver/ca-bundle.crt 
 %defattr(-,root,root)
@@ -92,3 +101,10 @@ fi
 %defattr(-,nsadmin,nsadmin)
 %dir /var/lib/naviserver
 /var/lib/naviserver/include
+
+%files doc
+%defattr(-,nsadmin,nsadmin)
+%dir /var/lib/naviserver/pages
+/var/lib/naviserver/pages/doc
+/var/lib/naviserver/pages/examples
+
