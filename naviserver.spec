@@ -23,22 +23,24 @@ BuildRequires: pkgconfig(zlib)
 Requires:      tcl >= 8.6
 Requires(pre): shadow
 BuildRoot:     %{buildroot}
-Provides:       group(nsadmin)
-Provides:       user(nsadmin)
+Provides:      group(nsadmin)
+Provides:      user(nsadmin)
 
 %description
 NaviServer is an extensible web server suited to create scalable websites and services.
 
 %package devel
-Summary:        Development package for NaviServer
-Group:          Productivity/Networking/Web/Servers
+Summary:       Development package for NaviServer
+Group:         Productivity/Networking/Web/Servers
+Requires:      %{name} = %{version}
 
 %description devel
 This package contains development files for NaviServer.
 
 %package doc
-Summary:        NaviServer documentation
-Group:          Productivity/Networking/Web/Servers
+Summary:       NaviServer documentation
+Group:         Productivity/Networking/Web/Servers
+Requires:      %{name} = %{version}
 
 %description doc
 The naviserver-doc package contains the documentation files.
