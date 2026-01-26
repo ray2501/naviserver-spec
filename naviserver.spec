@@ -4,7 +4,7 @@
 
 Name:          naviserver
 Summary:       NaviServer
-Version:       5.0.3
+Version:       5.0.4
 Release:       1
 License:       MPL-2.0
 Group:         Productivity/Networking/Web/Servers
