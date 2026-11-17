@@ -1,8 +1,8 @@
 #!/usr/bin/tclsh
 
 set arch "x86_64"
-set base "naviserver-5.0.6"
-set fileurl "https://sourceforge.net/projects/naviserver/files/naviserver/5.0.6/naviserver-5.0.6.tar.gz/download"
+set base "naviserver-5.0.7"
+set fileurl "https://sourceforge.net/projects/naviserver/files/naviserver/5.0.7/naviserver-5.0.7.tar.gz/download"
 
 set var [list curl -L $fileurl -o $base.tar.gz]
 exec >@stdout 2>@stderr {*}$var
